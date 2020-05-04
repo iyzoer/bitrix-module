@@ -496,7 +496,7 @@ if (isset($_POST['Update']) && ($_POST['Update'] == 'Y')) {
             LocalRedirect($uri);
             echo CAdminMessage::ShowMessage(GetMessage('API_NOT_FOUND'));
         }
-
+        // ���
         //api request with $version
         $crmUrl = htmlspecialchars(trim($_POST['api_host']));
         $apiKey = htmlspecialchars(trim($_POST['api_key']));
