@@ -34,6 +34,7 @@ for i in `find ./"$version" -type f -name '*.*'`; do
         if [ ! -z "$result" ]; then
             echo "Errors in file $i"
             echo $result
+
             exit 255
         fi
         mv $i.cp1251 $i
