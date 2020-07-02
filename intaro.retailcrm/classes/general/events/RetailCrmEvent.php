@@ -352,23 +352,24 @@ class RetailCrmEvent
                 );
 
                 if (!empty($companyResult)) {
+                    $orderCompany = array(
+                        'id' => $companyResult['id']
+                    );
+
                     $customerCorporateContact['companies'] = array(
                         array(
-                            'company' => array(
-                                'id' => $companyResult['id']
-                            )
+                            'company' => $orderCompany
                         )
                     );
                 }
 
-                $contactResult = $api->customersCorporateContactsCreate(
+                $api->customersCorporateContactsCreate(
                     $resultUserCorp['id'],
                     $customerCorporateContact,
                     'id',
                     $site
                 );
             } else {
-
                 RetailCrmCorporateClient::addCustomersCorporateAddresses(
                     $userCorp['customerCorporate']['id'],
                     $nickName,
